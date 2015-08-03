@@ -1,13 +1,14 @@
 {
   "name": "angular-timezone-selector-us-rails",
   "version": "1.0.5",
-  "homepage": "https://github.comEmilioZand/angular-timezone-selector-us-rails",
+  "homepage": "https://github.com/EmilioZand/angular-timezone-selector-us-rails",
   "authors": [
-    "Ashok Fernandez <ashok@mish.guru>"
+    "Ashok Fernandez <ashok@mish.guru>",
+    "Emilio Zand <mail@emiliozand.com> (Just updated the data file)"
   ],
   "description": "Timezone selector for Angular JS updated for only US time zones",
   "main": [
-    "dist/angular-timezone-selector.js",
+    "dist/angular-timezone-selector-us-rails.js",
     "dist/angular-timezone-selector.css"
   ],
   "keywords": [

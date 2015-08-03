@@ -2,7 +2,7 @@
   "name": "angular-timezone-selector-us-rails",
   "version": "1.0.5",
   "description": "AngularJS timezone select updated for US only with rails time zones",
-  "main": "dist/angular-timezone-selector.min.js",
+  "main": "dist/angular-timezone-selector-us-rails.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
