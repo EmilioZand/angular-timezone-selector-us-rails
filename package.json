@@ -1,14 +1,14 @@
 {
-  "name": "angular-timezone-selector",
-  "version": "1.0.1",
-  "description": "AngularJS timezone select",
+  "name": "angular-timezone-selector-us-rails",
+  "version": "1.0.5",
+  "description": "AngularJS timezone select updated for US only with rails time zones",
   "main": "dist/angular-timezone-selector.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mishguruorg/angular-country-selector.git"
+    "url": "git://github.com/EmilioZand/angular-country-selector-us-rails.git"
   },
   "keywords": [
     "angular",
@@ -18,9 +18,9 @@
   "author": "Ashok Fernandez <ashok@mish.guru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mishguruorg/angular-country-selector/issues"
+    "url": "https://github.com/EmilioZand/angular-country-selector-us-rails/issues"
   },
-  "homepage": "https://github.com/mishguruorg/angular-timezone-selector",
+  "homepage": "https://github.com/EmilioZand/angular-timezone-selector",
   "devDependencies": {
     "lodash": "latest",
     "uglify-js": "latest",

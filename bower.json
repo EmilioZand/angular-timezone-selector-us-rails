@@ -1,11 +1,11 @@
 {
-  "name": "angular-timezone-selector",
-  "version": "1.0.4",
-  "homepage": "https://github.com/mishguruorg/angular-timezone-selector",
+  "name": "angular-timezone-selector-us-rails",
+  "version": "1.0.5",
+  "homepage": "https://github.comEmilioZand/angular-timezone-selector-us-rails",
   "authors": [
     "Ashok Fernandez <ashok@mish.guru>"
   ],
-  "description": "Timezone selector for Angular JS",
+  "description": "Timezone selector for Angular JS updated for only US time zones",
   "main": [
     "dist/angular-timezone-selector.js",
     "dist/angular-timezone-selector.css"
