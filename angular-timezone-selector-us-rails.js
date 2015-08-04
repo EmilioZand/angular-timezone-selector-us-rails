@@ -1,54 +1,26 @@
-/*global angular, _, moment, $*/
+/*global angular, _,  $*/
 
 /**
  * angular-timezone-selector
  *
- * A simple directive that allows a user to pick their timezone
+ * A simple directive that allows a user to pick their timezone from the US
  *
- * Author:  Ashok Fernandez <ashok@mish.guru>
- * Date:    12/06/2015
+ * Author:  Ashok Fernandez <ashok@mish.guru>, Emilio Zand<mail@emiliozand.com>
+ * Date:    08/03/2015
  * License: MIT
  */
 
 angular.module('angular-timezone-selector', [])
   .constant('_', _)
-  .constant('moment', moment)
-  .factory('timezones', ['_', 'moment', function (_, moment) {
-    var timezoneMap = {}
-    _.forEach(moment.tz.names(), function (zoneName) {
-      timezoneMap[zoneName] = {
-        id: zoneName,
-        name: zoneName.replace(/_/g, ' '),
-        offset: 'UTC' + moment().tz(zoneName).format('Z')
-      }
-    })
-    return timezoneMap
-  }])
 
   // Timezone name to country codemap
-  .factory('zoneToCC', ['_', function (_) {
+  .factory('timezones', ['_', function (_) {
     // Note: zones is populated with the data from 'data/zone.csv' when this file is built
     var zones = []
-    var zoneMap = {}
-    _.forEach(zones, function (zone) {
-      zoneMap[zone.name] = zone.cca2
-    })
-    return zoneMap
-
+    return zones
   }])
 
-  // Country code to country name map
-  .factory('CCToCountryName', ['_', function (_) {
-    // Note: codes is populated with the data from 'data/cca2_to_country_name.csv' when this file is built
-    var codes = []
-    var codeMap = {}
-    _.forEach(codes, function (code) {
-      codeMap[code.cca2] = code.name
-    })
-    return codeMap
-  }])
-
-  .directive('timezoneSelector', ['_', 'timezones', 'zoneToCC', 'CCToCountryName', function (_, timezones, zoneToCC, CCToCountryName) {
+  .directive('timezoneSelector', ['_', 'timezones', function (_, timezones) {
     return {
       restrict: 'E',
       replace: true,
@@ -57,40 +29,14 @@ angular.module('angular-timezone-selector', [])
         ngModel: '='
       },
       link: function ($scope, elem, attrs) {
-        var data = []
-
-        // Group the timezones by their country code
-        var timezonesGroupedByCC = {}
-        _.forEach(timezones, function (timezone) {
-          if (_.has(zoneToCC, timezone.id)) {
-            var CC = zoneToCC[timezone.id]
-            timezonesGroupedByCC[CC] = !timezonesGroupedByCC[CC] ? [] : timezonesGroupedByCC[CC]
-            timezonesGroupedByCC[CC].push(timezone)
-          }
-        })
-
-        // Add the grouped countries to the data array with their country name as the group option
-        _.forEach(timezonesGroupedByCC, function (zonesByCountry, CC) {
-          var zonesForCountry = {
-            text: CCToCountryName[CC] + ': ',
-            children: zonesByCountry
-          }
-
-          data.push(zonesForCountry)
-        })
-
-        // Sort by country name
-        data = _.sortBy(data, 'text')
 
         // Construct a select box with the timezones grouped by country
-        _.forEach(data, function (group) {
-          var $optgroup = $('<optgroup label="' + group.text + '">')
-          group.children.forEach(function (option) {
-            $optgroup.append('<option value="' + option.id + '">' +
-              option.name + '</option>')
-          })
-          elem.append($optgroup)
+        var $optgroup = $('<optgroup label="United States">')
+        timezones.forEach(function (option) {
+          $optgroup.append('<option value="' + option.id + '">' +
+            option.name + '</option>')
         })
+        elem.append($optgroup)
 
         // Initialise the chosen box
         elem.chosen({

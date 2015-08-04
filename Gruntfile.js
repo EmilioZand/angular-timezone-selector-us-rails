@@ -16,10 +16,6 @@ module.exports = function (grunt) {
           {
             pattern: 'var zones = []',
             replacement: 'var zones = ' + JSON.stringify(loader('./data/zone.csv'))
-          },
-          {
-            pattern: 'var codes = []',
-            replacement: 'var codes = ' + JSON.stringify(loader('./data/cca2_to_country_name.csv'))
           }
         ]
       }

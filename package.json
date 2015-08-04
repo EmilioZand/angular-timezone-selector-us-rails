@@ -15,7 +15,7 @@
     "timezone",
     "select"
   ],
-  "author": "Ashok Fernandez <ashok@mish.guru>",
+  "author": "Ashok Fernandez <ashok@mish.guru>, Emilio Zand <mail@emiliozand.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/EmilioZand/angular-country-selector-us-rails/issues"
