@@ -1,6 +1,6 @@
 {
   "name": "angular-timezone-selector-us-rails",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "AngularJS timezone select updated for US only with rails time zones",
   "main": "dist/angular-timezone-selector-us-rails.min.js",
   "scripts": {
