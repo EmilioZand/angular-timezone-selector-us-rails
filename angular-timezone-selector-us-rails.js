@@ -33,7 +33,7 @@ angular.module('angular-timezone-selector', [])
         // Construct a select box with the timezones grouped by country
         var $optgroup = $('<optgroup label="United States">')
         timezones.forEach(function (option) {
-          $optgroup.append('<option value="' + option.id + '">' +
+          $optgroup.append('<option value="' + option.name + '">' +
             option.name + '</option>')
         })
         elem.append($optgroup)
@@ -41,7 +41,7 @@ angular.module('angular-timezone-selector', [])
         // Initialise the chosen box
         elem.chosen({
           width: '300px',
-          include_group_label_in_selected: true,
+          include_group_label_in_selected: false,
           search_contains: true,
           no_results_text: 'No results, try searching for the name of your country or nearest major city.',
           placeholder_text_single: 'Choose a timezone'
